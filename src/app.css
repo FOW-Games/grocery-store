@@ -21,5 +21,5 @@ button:hover {
 }
 
 * {
-	outline: black 1px solid;
+	outline: rgba(0, 0, 0, 0.5) 1px solid;
 }

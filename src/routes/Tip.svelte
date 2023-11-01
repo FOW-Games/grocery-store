@@ -12,5 +12,6 @@
 <input type="radio" name="0%" id="zero">10%
 <input type="radio" name="0%" id="zero">20%
 
+<!-- custom tip level %, better UI  -->
 
 <button on:click={finishTip}>Finish</button>
