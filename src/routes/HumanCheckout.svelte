@@ -6,30 +6,34 @@
 	}
 
 	let items = [
-		{ name: 'Apples', price: getRandPrice(), userPrice: 0 },
-		{ name: 'Bananas', price: getRandPrice(), userPrice: 0 },
-		{ name: 'Oranges', price: getRandPrice(), userPrice: 0 }
+		{ name: 'Apples', price: getRandPrice(), humanPrice: 0},
+		{ name: 'Bananas', price: getRandPrice(), humanPrice: 0},
+		{ name: 'Oranges', price: getRandPrice(), humanPrice: 0,}
 	];
 
 	function finishCheckout() {
 		gameState.set('TIP');
-		// Maybe make it so that we can skip the tip section sometimes
 	}
 
-	// Maybe add custom behavior for different cashiers 
-	function automateSliders() {
-		// TODO
+	function automateSlider(index) {
+		const interval = setInterval(function() 
+			{
+			if (items[index].humanPrice < items[index].price) {
+				items[index].humanPrice += 1;
+			} else {
+				clearInterval(interval)
+			}
+		}, 600);
 	}
 
 	
 </script>
 
-<!-- make better ui, maybe automate the sliders -->
 {#each items as item, i}
 	<div class="slider-container">
 		{item.name}: ${item.price}
 		
-			<input type="range" min="0" max="9" id={i} bind:value={item.userPrice} list="values"/>
+			<input type="range" min="0" max="9" id={i} on:load={automateSlider(i)} bind:value={item.humanPrice} list="values"/>
 			<datalist id="values">
 				<option value="0" label="0"></option>
 				<option value="1" label="1"></option>
@@ -41,7 +45,7 @@
 				<option value="7" label="7"></option>
 				<option value="8" label="8"></option>
 				<option value="9" label="9"></option>
-			  </datalist>
+			</datalist>
 		
 	</div>
 {/each}

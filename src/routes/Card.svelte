@@ -3,24 +3,32 @@
 
 	export let title = '<>';
 
-	function start() {
-		gameState.set('CHECKOUT');
+	function start(title) {
+		console.log(title)
+		if (title === "Self Checkout") {
+			gameState.set('CHECKOUT');
+		} else {
+			gameState.set('HUMANCHECKOUT');
+		}
+	}
+
+	function getRandPpl() {
+		return Math.floor(Math.random() * 10);
 	}
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<div class="card" on:click={start}>
+<div class="card" on:click={start(title)}>
 	<div class="card-content">
 		<h4>{title}</h4>
-		<p># people in line: 0</p>
+		<p># people in line: {getRandPpl()}</p>
 	</div>
 </div>
 
 <style>
 	.card {
 		margin: 10px;
-
 		display: flex;
 		justify-content: center;
 		align-items: center;

@@ -4,6 +4,7 @@
 	import '../app.css';
 	import Home from './Home.svelte';
 	import Checkout from './Checkout.svelte';
+	import HumanCheckout from './HumanCheckout.svelte';
 	import Tip from './Tip.svelte';
 
 	import { gameState } from '$lib/stores.js';
@@ -16,6 +17,8 @@
 		<Checkout />
 	{:else if $gameState === 'TIP'}
 		<Tip />
+	{:else if $gameState === 'HUMANCHECKOUT'}
+		<HumanCheckout />
 	{/if}
 </div>
 
