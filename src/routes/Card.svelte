@@ -4,7 +4,7 @@
 	export let title = '<>';
 
 	function start(title) {
-		console.log(title)
+		console.log("CHECKOUT DEBUG: " + title)
 		if (title === "Self Checkout") {
 			gameState.set('CHECKOUT');
 		} else {
@@ -13,7 +13,7 @@
 	}
 
 	function getRandPpl() {
-		return Math.floor(Math.random() * 10);
+		return Math.floor(Math.random() * 0);
 	}
 </script>
 

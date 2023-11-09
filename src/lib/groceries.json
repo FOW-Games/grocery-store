@@ -1,0 +1,15 @@
+[
+    {"name": "apples", "price": null, "userPrice": 0},
+    {"name": "bananas", "price": null, "userPrice": 0},
+    {"name": "carrots", "price": null, "userPrice": 0},
+    {"name": "potatoes", "price": null, "userPrice": 0},
+    {"name": "peaches", "price": null, "userPrice": 0},
+    {"name": "brocolli", "price": null, "userPrice": 0},
+    {"name": "onions", "price": null, "userPrice": 0},
+    {"name": "celery", "price": null, "userPrice": 0},
+    {"name": "raspberries", "price": null, "userPrice": 0},
+    {"name": "radishes", "price": null, "userPrice": 0},
+    {"name": "tomatoes", "price": null, "userPrice": 0},
+    {"name": "eggs", "price": null, "userPrice": 0},
+    {"name": "mushrooms", "price": null, "userPrice": 0}
+]

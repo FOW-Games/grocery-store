@@ -30,7 +30,7 @@
 		-webkit-transform: translate(-50%, -50%);
 		transform: translate(-50%, -50%);
 		width: 800px;
-		height: 800px;
-		/* height: 100vh; */
+		height: 700px;
+		overflow-y: scroll;
 	}
 </style>
