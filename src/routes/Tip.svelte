@@ -11,14 +11,14 @@
 	];
 
 	const displayedPercents = tips[Math.floor(Math.random() * (tips.length -1 - 0 + 1) + 0)];
-	const displayedTips = displayedPercents.map((tip) => $finalPrice * tip / 100);
+	const displayedTips = displayedPercents.map((tip) => ($finalPrice * tip / 100).toFixed(2));
 
 	let custom = false;
 	let customInput = '';
 
 	function finishTip(tip) {
 		if (tip !== '' && tip >= 0 && tip <= 100) {
-			console.log("TIP DEBUG: " + tip);
+			console.log("TIP DEBUG: " + tip +"%");
 			// log tip variable to history
 			gameState.set('HOME');
 		} else {
