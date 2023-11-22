@@ -1,10 +1,13 @@
 <script>
 	import { gameState } from '$lib/stores.js';
+	import { round } from '$lib/stores.js';
 
 	export let title = '<>';
 
 	function start(title) {
+		$round += 1;
 		console.log("CHECKOUT DEBUG: " + title)
+		console.log("ROUND: " + $round)
 		if (title === "Self Checkout") {
 			gameState.set('CHECKOUT');
 		} else {

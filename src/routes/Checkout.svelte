@@ -1,6 +1,9 @@
 <script>
 	import { gameState, finalPrice } from '$lib/stores.js';
 	import groceries from '$lib/groceries.json';
+	import Timer from './Timer.svelte';
+
+	let incorrect;
 
 	let totalPrice = 0;
 	const shuffled = groceries.sort(() => 0.5 - Math.random());
@@ -26,10 +29,10 @@
 			let timeElapsed = Math.floor((endTime - startTime) / 1000);
 			console.log("TIME DEBUG: " + timeElapsed + " seconds");
 			// log timeElapsed to history
-			finalPrice.set(totalPrice);
+			finalPrice.set(totalPrice.toFixed(2));
 			gameState.set('TIP');
 		} else {
-			alert("Try again. You have scanned the following items incorrectly: " + incorrectItems);
+			incorrect.innerHTML = "Try again. You scanned the following items incorrectly: " + "<strong>" + incorrectItems + "</strong>";
 		}
 	}
 
@@ -60,19 +63,21 @@
 		
 	</div>
 {/each}
-
+<Timer />
+<div bind:this={incorrect}></div>
 <button on:click={finishCheckout}>Finish Checkout</button>
 
-<div class="debug">
+<!-- <div class="debug">
 	DEBUG:
 	{JSON.stringify(items)}
-</div>
+</div> -->
 
 <style>
 	.slider-container {
 		display: flex;
 		flex-direction: column;
-		margin: 20px;
+		margin-top: 20px;
+		border:1px solid black;
 	}
 
 	datalist {

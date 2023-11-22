@@ -32,5 +32,7 @@
 		width: 800px;
 		height: 700px;
 		overflow-y: scroll;
+		border: 1px solid black;
+		padding: 20px;
 	}
 </style>

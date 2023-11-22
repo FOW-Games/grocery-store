@@ -27,6 +27,8 @@
 	}
 </script>
 
+<div class="container">
+
 <h1>${$finalPrice}</h1>
 
 <h2>Add a tip?</h2>
@@ -40,9 +42,12 @@
 <button class="otherBtns" on:click={() => {custom = true}}>Custom</button>
 
 {#if custom}
-  <input style={"width: 50px;"} type="number" bind:value={customInput}/>%
-  <!-- <p>{$finalPrice * customInput / 100}</p> -->
-  <button on:click={() => finishTip(customInput)}>Submit</button>
+	<div style={"display: flex;"}>
+		<p>$</p>
+		<input style={"width: 50px; height: 20px;"} type="number" bind:value={customInput}/>
+	</div>
+	<p style={"margin: 0px;"}>{(customInput / $finalPrice * 100).toFixed(2)}%</p>
+	<button on:click={() => finishTip((customInput / $finalPrice * 100).toFixed(2))}>Submit</button>
 {/if}
 
 <br/>
@@ -50,7 +55,13 @@
   <button class="otherBtns" on:click={() => finishTip(0)}>No Tip</button>
 {/if}
 
+</div>
+
 <style>
+	.container {
+		display: grid;
+		justify-content: center;
+	}
 	.btn {
 		width: 100px;
 		height: 60px;
