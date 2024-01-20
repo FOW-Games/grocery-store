@@ -10,7 +10,7 @@
 		[20, 25, 30]
 	];
 
-	const displayedPercents = tips[Math.floor(Math.random() * (tips.length -1 - 0 + 1) + 0)];
+	const displayedPercents = tips[Math.floor(Math.random() * (tips.length))];
 	const displayedTips = displayedPercents.map((tip) => ($finalPrice * tip / 100).toFixed(2));
 
 	let custom = false;

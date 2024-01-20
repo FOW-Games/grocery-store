@@ -7,7 +7,7 @@
 
 	let totalPrice = 0;
 	const shuffled = groceries.sort(() => 0.5 - Math.random());
-	const items = shuffled.slice(0, Math.floor(Math.random() * (10 - 3 + 1) + 3));
+	const items = shuffled.slice(0, Math.floor(Math.random() * (10 - 3 + 1) + 3)); // slices items from index 0 to a random # between 3 and 10 (inclusive)
 
 	for (const item of items) {
 		item.price = (Math.floor(Math.random() * 101) / 10).toFixed(1);

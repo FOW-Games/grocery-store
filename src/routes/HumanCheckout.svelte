@@ -4,7 +4,7 @@
 	import Timer from './Timer.svelte';
 
 	let totalPrice = 0.0;
-	let speed = 10; //milliseconds
+	let speed = 10; // milliseconds
 	let isBtnDisabled = true;
 
 	const shuffled = groceries.sort(() => 0.5 - Math.random());
